@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="342dp"
+        android:layout_marginTop="30dp"
+        tools:context=".loginFragment"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.4sp"
+
+            android:text="@string/log_in"
+            android:textColor="#43A047"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="8sp"
+            android:textColor="#272a3f"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:text="@string/login_into_authors_app" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/phone_number_amp_password_to_continue"
+            android:textColor="#546E7A"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="120dp"
+            app:counterMaxLength="10"
+            app:helperText="@string/required"
+            app:helperTextTextColor="#A61111"
+            android:gravity="center"
+          >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_text"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="16dp"
+                android:inputType="phone"
+                android:lines="1"
+                android:hint="@string/phone_number"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_pass"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="180dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="16"
+            app:helperText="@string/required"
+            app:helperTextTextColor="#FFD17171"
+            app:passwordToggleEnabled="true"
+            tools:ignore="ExtraText">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pass_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="16dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:textColorHint="#757575"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sinup"
+            android:layout_width="143dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="259dp"
+            android:background="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:hint="@string/SIGNUP"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.4sp"
+            android:textAlignment="center"
+            android:textColor="#1B0B10"
+            android:textColorHint="#242727"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logn"
+            android:layout_width="143dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="259dp"
+            android:background="@color/blue"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.4sp"
+            android:textAlignment="center"
+            android:textColor="#FC0D0913"
+            android:textSize="17sp"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:hint="@string/LOGIN" />
+
+
+    </FrameLayout>
+
+
+</LinearLayout>
