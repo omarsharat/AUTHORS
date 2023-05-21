@@ -113,7 +113,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phnum"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                android:layout_width="331dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/phone_number"
                 android:inputType="phone"
@@ -138,7 +138,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passcode"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                android:layout_width="331dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="16dp"
                 android:hint="@string/password"
