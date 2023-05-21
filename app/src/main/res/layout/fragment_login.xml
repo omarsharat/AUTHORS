@@ -119,7 +119,7 @@
             android:letterSpacing="0.01"
             android:lineSpacingExtra="3.4sp"
             android:textAlignment="center"
-            android:textColor="#1B0B10"
+            android:textColor="#FC0D0913"
             android:textColorHint="#242727"
             android:textSize="17sp"
             android:textStyle="normal" />

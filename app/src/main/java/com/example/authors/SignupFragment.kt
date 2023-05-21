@@ -27,10 +27,10 @@ class SignupFragment : Fragment() {
 
         val buttonSignup = view.findViewById<Button>(R.id.sinup)
         buttonSignup.setOnClickListener {
-            val firstNameEditText = view.findViewById<TextInputEditText>(R.id.fname)
-            val lastNameEditText = view.findViewById<TextInputEditText>(R.id.lname)
-            val phoneNumberEditText = view.findViewById<TextInputEditText>(R.id.phnum)
-            val passwordEditText = view.findViewById<TextInputEditText>(R.id.passcode)
+            val firstNameEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.fname)
+            val lastNameEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.lname)
+            val phoneNumberEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.phnum)
+            val passwordEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.passcode)
             val genderRadioGroup = view.findViewById<RadioGroup>(R.id.R_gender)
 
             val firstName = firstNameEditText.text.toString()
@@ -64,7 +64,7 @@ class SignupFragment : Fragment() {
     }
 
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
-        val phoneNumberRegex = Regex("^079[0-9]{7}\$")
+        val phoneNumberRegex = Regex("^07\\d{8}\$")
         return phoneNumber.matches(phoneNumberRegex)
     }
 
@@ -76,6 +76,7 @@ class SignupFragment : Fragment() {
         editor.putString("password", password)
         editor.putString("gender", gender)
         editor.apply()
+
     }
 
     private fun navigateToLoginFragment() {

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
@@ -31,9 +30,9 @@ class LoginFragment : Fragment() {
             }
         }
 
-        val phoneNumberEditText = view.findViewById<EditText>(R.id.phone_text)
-        val passwordEditText = view.findViewById<EditText>(R.id.pass_text)
-        val loginButton = view.findViewById<Button>(R.id.logn)
+        val phoneNumberEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.phone_text)
+        val passwordEditText = view.findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.pass_text)
+        val loginButton = view.findViewById<com.google.android.material.button.MaterialButton>(R.id.logn)
         loginButton.setOnClickListener {
             val phoneNumber = phoneNumberEditText.text.toString()
             val password = passwordEditText.text.toString()
@@ -56,12 +55,14 @@ class LoginFragment : Fragment() {
 
     private fun isUserRegistered(): Boolean {
         val phoneNumber = sharedPreferences.getString("phoneNumber", null)
-        return !phoneNumber.isNullOrEmpty()
+        val password = sharedPreferences.getString("password" ,null )
+        return !phoneNumber.isNullOrEmpty() && !password.isNullOrEmpty()
     }
 
     private fun checkLoginCredentials(phoneNumber: String, password: String): Boolean {
-        val savedPhoneNumber = sharedPreferences.getString("phoneNumber", "")
-        val savedPassword = sharedPreferences.getString("password", "")
-        return phoneNumber == savedPhoneNumber && password == savedPassword
+        val savedPhoneNumber = sharedPreferences.getString("phoneNumber", "")?.trim()
+        val savedPassword = sharedPreferences.getString("password", "")?.trim()
+        return phoneNumber.equals(savedPhoneNumber, ignoreCase = true) && password.equals(savedPassword, ignoreCase = true)
     }
-}
+    }
+

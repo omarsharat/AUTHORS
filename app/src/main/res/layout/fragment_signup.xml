@@ -215,7 +215,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="210dp"
             android:layout_marginTop="459dp"
-            android:background="#29c17e"
+            android:background="@color/blue"
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="3.4sp"
