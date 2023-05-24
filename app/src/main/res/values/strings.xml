@@ -19,5 +19,15 @@
     <string name="phone_number_amp_password_to_continue"><![CDATA[Phone Number & password to continue]]></string>
     <string name="logn">login</string>
     <string name="LOGIN">LOGIN</string>
-    <string name="SIGNUP">SIGNUP</string>
+    <string name="SIGNUP">Sign up</string>
+    <string name="sign_up">Sign up</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
+    <string name="gender">Gender</string>
+    <string name="firstname">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="signup">Sign up</string>
+    <string name="back">back</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
 </resources>

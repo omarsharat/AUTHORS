@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="342dp"
         android:layout_marginTop="30dp"
-        tools:context=".loginFragment"
         android:orientation="horizontal"
+        tools:context=".loginFragment"
         tools:ignore="UselessParent">
 
         <TextView
@@ -27,20 +27,20 @@
 
             android:text="@string/log_in"
             android:textColor="#43A047"
-            android:textSize="22sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-medium"
             android:lineSpacingExtra="8sp"
+            android:text="@string/login_into_authors_app"
             android:textColor="#272a3f"
             android:textSize="24sp"
-            android:textStyle="normal"
-            android:text="@string/login_into_authors_app" />
+            android:textStyle="normal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,20 +61,22 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="120dp"
+            android:gravity="center"
+            app:boxBackgroundColor="@color/transperant"
             app:counterMaxLength="10"
             app:helperText="@string/required"
             app:helperTextTextColor="#A61111"
-            android:gravity="center"
-          >
+            tools:ignore="MissingClass">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone_text"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginHorizontal="16dp"
-                android:inputType="phone"
-                android:lines="1"
                 android:hint="@string/phone_number"
+                android:inputType="phone"
+
+                android:lines="1"
                 android:textSize="18sp"
                 tools:ignore="VisualLintTextFieldSize,TouchTargetSizeCheck" />
 
@@ -85,12 +87,14 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="180dp"
+            app:boxBackgroundColor="@color/transperant"
             app:counterEnabled="true"
             app:counterMaxLength="16"
             app:helperText="@string/required"
             app:helperTextTextColor="#FFD17171"
             app:passwordToggleEnabled="true"
-            tools:ignore="ExtraText">
+            tools:ignore="ExtraText,MissingClass">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/pass_text"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
@@ -106,42 +110,57 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sinup"
-            android:layout_width="143dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="259dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
+            android:layout_width="124dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="31dp"
             android:background="@color/white"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:hint="@string/SIGNUP"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="3.4sp"
+            android:text="@string/SIGNUP"
             android:textAlignment="center"
-            android:textColor="#FC0D0913"
-            android:textColorHint="#242727"
+            android:textAllCaps="false"
+            android:textColor="#546E7A"
             android:textSize="17sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            app:backgroundTint="@color/white"
+            tools:ignore="MissingClass" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logn"
-            android:layout_width="143dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="259dp"
-            android:background="@color/blue"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="124dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="31dp"
+            android:backgroundTint="#29c17e"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="3.4sp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="11dp"
+            android:text="@string/LOGIN"
             android:textAlignment="center"
-            android:textColor="#FC0D0913"
-            android:textSize="17sp"
+            android:textColor="#FFFF"
+            android:textSize="14sp"
             android:textStyle="normal"
-            android:gravity="center"
-            android:hint="@string/LOGIN" />
-
-
+            android:visibility="visible"
+            app:backgroundTint="#29c17e"
+            app:cornerRadius="7dp"
+            app:elevation="5dp"
+            tools:ignore="MissingClass"
+            tools:visibility="visible" />
     </FrameLayout>
 
 

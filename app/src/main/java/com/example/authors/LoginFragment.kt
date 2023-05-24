@@ -9,13 +9,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-
+import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment() {
 
     private lateinit var sharedPreferences: SharedPreferences
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
         sharedPreferences = requireActivity().getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
 
@@ -26,7 +30,7 @@ class LoginFragment : Fragment() {
                 val transaction = fragmentManager?.beginTransaction()
                 transaction?.replace(R.id.nav_continer, fragment)?.commit()
             } else {
-                Toast.makeText(requireContext(), "You are already signed in ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "You are already signed in", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -44,6 +48,7 @@ class LoginFragment : Fragment() {
             } else {
                 if (checkLoginCredentials(phoneNumber, password)) {
                     Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+                    navigateToSignupFragment()
                 } else {
                     Toast.makeText(requireContext(), "Login failed", Toast.LENGTH_SHORT).show()
                 }
@@ -55,14 +60,17 @@ class LoginFragment : Fragment() {
 
     private fun isUserRegistered(): Boolean {
         val phoneNumber = sharedPreferences.getString("phoneNumber", null)
-        val password = sharedPreferences.getString("password" ,null )
+        val password = sharedPreferences.getString("password", null)
         return !phoneNumber.isNullOrEmpty() && !password.isNullOrEmpty()
     }
 
     private fun checkLoginCredentials(phoneNumber: String, password: String): Boolean {
-        val savedPhoneNumber = sharedPreferences.getString("phoneNumber", "")?.trim()
-        val savedPassword = sharedPreferences.getString("password", "")?.trim()
-        return phoneNumber.equals(savedPhoneNumber, ignoreCase = true) && password.equals(savedPassword, ignoreCase = true)
+        val identifier = phoneNumber + password
+        val savedPhoneNumber = sharedPreferences.getString("$identifier.phoneNumber", null)
+        val savedPassword = sharedPreferences.getString("$identifier.password", null)
+        return phoneNumber == savedPhoneNumber && password == savedPassword
     }
+    private fun navigateToSignupFragment() {
+        findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
     }
-
+}
