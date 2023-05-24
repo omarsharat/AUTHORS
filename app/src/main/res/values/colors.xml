@@ -2,9 +2,13 @@
 <resources  name="Theme.Authors2" parent="Theme.MaterialComponents.Light">
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#43A047</color>
+    <color name="green">#29c17e</color>
     <color name="purple_500">#9C27B0</color>
     <color name="purple_700">#7B1FA2</color>
     <color name="teal_200">#80CBC4</color>
     <color name="teal_700">#00796B</color>
+    <color name="transperant">#00FFFFFF</color>
+    <color name="button_selected_color">#29c17e</color>
+    <color name="button_unselected_color">#ffffff</color>
+    <color name="button_text_white_color">#FFFFFF</color>
 </resources>

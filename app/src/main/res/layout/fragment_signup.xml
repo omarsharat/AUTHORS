@@ -1,101 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signupFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupFragment"
-    android:orientation="vertical"
     android:background="@color/white"
-    android:id="@+id/signupFragment"
-    >
+    android:orientation="vertical"
+    tools:context=".signup.view.SignupFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="544dp"
-        tools:context=".SignupFragment"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:context=".signup.view.SignupFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="0dp"
+            android:background="@color/white"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="19dp"
+                android:contentDescription="@string/back"
+                android:onClick="onBackPressed"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="end"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="3.4sp"
+                android:text="@string/signup"
+                android:textColor="#29c17e"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="#29c17e"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="3.4sp"
-            android:gravity="end"
-            android:text="Sign up"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginStart="16dp"
             android:fontFamily="sans-serif-medium"
-            android:textStyle="normal"
-            android:textSize="24sp"
-            android:textColor="#272a3f"
             android:lineSpacingExtra="8sp"
-            android:text="Welcome to Authors App"/>
+            android:text="Welcome to Authors App"
+            android:textColor="#272a3f"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="90dp"
             android:fontFamily="sans-serif"
-            android:textStyle="normal"
-            android:textSize="20sp"
-            android:textColor="#6e7989"
             android:lineSpacingExtra="8sp"
-            android:text="Let&apos;s get started"/>
+            android:text="Let&apos;s get started"
+            android:textColor="#6e7989"
+            android:textSize="20sp"
+            android:textStyle="normal" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cont_frstname"
-            android:layout_width="233dp"
-            android:layout_height="wrap_content"
+            android:layout_width="155dp"
+               android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="130dp"
             android:fontFamily="sans-serif"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="8sp"
+            app:boxBackgroundColor="@android:color/transparent"
 
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fname"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                android:layout_width="268dp"
+                android:layout_width="155dp"
+                android:lines="1"
                 android:layout_height="48dp"
+                android:text="@string/firstname"
                 android:textColor="#99a0b0"
                 android:textSize="16sp"
-                android:textStyle="normal"
-                android:hint="First Name" />
+                android:textStyle="normal" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cont_lastname"
-            android:layout_width="233dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="130dp"
             android:fontFamily="sans-serif"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="8sp"
+            app:boxBackgroundColor="@android:color/transparent"
 
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/lname"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                android:layout_width="268dp"
+                android:layout_width="155dp"
                 android:layout_height="48dp"
+                app:boxBackgroundColor="@color/transperant"
+                android:text="@string/last_name"
                 android:textColor="#99a0b0"
                 android:textSize="16sp"
-                android:textStyle="normal"
-                android:hint="Last Name" />
+                android:textStyle="normal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -104,11 +133,11 @@
             android:layout_width="364dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="200dp"
             android:fontFamily="sans-serif"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="8sp"
-            >
+            app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phnum"
@@ -116,10 +145,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/phone_number"
-                android:inputType="phone"
                 android:textColor="#99a0b0"
                 android:textSize="16sp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                app:boxBackgroundColor="@color/transperant" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +156,8 @@
             android:id="@+id/container_pass"
             android:layout_width="395dp"
             android:layout_height="48dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="260dp"
+            app:boxBackgroundColor="@android:color/transparent"
             tools:counterEnabled="true"
             tools:counterMaxLength="16"
             tools:helperText="@string/required"
@@ -138,14 +168,16 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passcode"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="395dp"
+                android:layout_height="48dp"
+                app:boxBackgroundColor="@color/transperant"
                 android:layout_marginHorizontal="16dp"
-                android:hint="@string/password"
-                android:inputType="textPassword"
+                android:text="@string/password"
+                android:textColor="#99a0b0"
+                android:inputType="textVisiblePassword"
                 android:lines="1"
                 android:textColorHint="#757575"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 tools:ignore="VisualLintTextFieldSize" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -153,96 +185,77 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="330dp"
             android:fontFamily="sans-serif"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="#99a0b0"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="8sp"
-            android:text="Gender"/>
+            android:text="@string/gender"
+            android:textColor="#99a0b0"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-<RadioGroup
-    android:id="@+id/R_gender"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/male"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="365dp"
+            android:layout_marginStart="30dp"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="4dp"
+            android:text="@string/Male"
+            android:textAllCaps="false"
+            android:elevation="7dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.4sp"
+            android:backgroundTint="@drawable/button_male_selector"
+            android:textColor="@color/button_text_white_color"
+            />
 
-    <RadioButton
-        android:id="@+id/male"
-        android:layout_width="127dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="390dp"
-        android:background="#FFFF"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.01"
-        android:lineSpacingExtra="3.4sp"
-        android:minHeight="48dp"
-        android:text=" male "
-        android:textAlignment="center"
-        android:textColor="#EB0A0A0B"
-        android:textSize="17sp"
-        android:textStyle="normal" />
-
-    <RadioButton
-        android:id="@+id/fe_male"
-        android:layout_width="127dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="390dp"
-        android:background="#E6618F"
-        android:fontFamily="sans-serif-medium"
-        android:letterSpacing="0.01"
-        android:lineSpacingExtra="3.4sp"
-        android:minHeight="48dp"
-        android:text="female"
-        android:textAlignment="center"
-        android:textColor="#3C0E0E"
-        android:textSize="17sp"
-        android:textStyle="normal" />
-
-
-</RadioGroup>
-
-
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/female"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="365dp"
+            android:layout_marginStart="150dp"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="4dp"
+            android:text="@string/Female"
+            android:textAllCaps="false"
+            android:elevation="7dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="3.4sp"
+            android:backgroundTint="@drawable/button_female_selector"
+            android:textColor="@color/button_text_white_color"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sinup"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="127dp"
             android:layout_height="60dp"
-            android:layout_marginStart="210dp"
+            app:cornerRadius="4dp"
+            android:layout_marginStart="240dp"
             android:layout_marginTop="459dp"
-            android:background="@color/blue"
+            android:backgroundTint="#29c17e"
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.01"
             android:lineSpacingExtra="3.4sp"
-            android:text="Sign up"
+            android:text="@string/sign_up"
+            android:elevation="7dp"
             android:textAlignment="center"
-            android:textColor="#3C0E0E"
+            android:textColor="#FFFF"
             android:textSize="17sp"
             android:textStyle="normal"
-
             tools:ignore="DuplicateSpeakableTextCheck" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/logn"
-            android:layout_width="127dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="459dp"
-            android:background="@color/white"
-            android:fontFamily="sans-serif-medium"
-            android:hint="@string/login"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="3.4sp"
-            android:text="@string/logn"
-            android:textAlignment="center"
-            android:textColor="#3C0E0E"
-            android:textSize="17sp"
-            android:textStyle="normal" />
+
 
 
     </FrameLayout>
